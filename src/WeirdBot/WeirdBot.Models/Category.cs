@@ -8,7 +8,8 @@ namespace WeirdBot.Models
 {
     public enum Category
     {
-        Web,
+        General,
+        Media,
         Business,
         Developer,
         Gaming

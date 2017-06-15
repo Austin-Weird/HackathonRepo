@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.DataAccess", "Weir
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot", "WeirdBot\WeirdBot.csproj", "{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.Utilities", "WeirdBot.Utilities\WeirdBot.Utilities.csproj", "{43F70A62-29DD-48C1-ACEB-086B67C5AD20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
