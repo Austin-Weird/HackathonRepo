@@ -1,0 +1,40 @@
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Bot Application.dll.config
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Bot Application.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Bot Application.pdb
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Autofac.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Chronic.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Newtonsoft.Json.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Net.Http.Formatting.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Web.Http.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Web.Http.WebHost.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Autofac.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\Newtonsoft.Json.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Net.Http.Formatting.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Web.Http.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\System.Web.Http.WebHost.xml
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\obj\Debug\WeirdBot.csprojResolveAssemblyReference.cache
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\obj\Debug\Bot Application.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot\obj\Debug\Bot Application.pdb
