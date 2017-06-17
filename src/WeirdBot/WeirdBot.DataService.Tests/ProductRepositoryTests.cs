@@ -4,7 +4,6 @@ using Moq;
 using Microsoft.WindowsAzure.Storage.Table;
 using WeirdBot.DataAccess.DataObjects;
 using System.Collections.Generic;
-using WeirdBot.DataAccess.Models;
 using WeirdBot.Models;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.Azure;

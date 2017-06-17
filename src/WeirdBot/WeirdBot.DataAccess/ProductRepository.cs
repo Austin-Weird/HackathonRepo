@@ -1,12 +1,9 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
+using Microsoft.WindowsAzure.Storage.Table;
 using WeirdBot.DataAccess.DataObjects;
 using WeirdBot.Models;
 
-namespace WeirdBot.DataAccess.Models
+namespace WeirdBot.DataAccess
 {
     public class ProductRepository
     {
