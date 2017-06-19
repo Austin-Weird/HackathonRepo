@@ -1,9 +1,12 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using WeirdBot.Dialogs;
+using WeirdBot.Forms;
 
 namespace WeirdBot.Controllers
 {
@@ -18,8 +21,8 @@ namespace WeirdBot.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
                 await Conversation.SendAsync(activity, () => Dialogs.RootDialog.dialog);
+                //await Conversation.SendAsync(activity, MakeLuisDialog);
             }
             else
             {
@@ -27,6 +30,11 @@ namespace WeirdBot.Controllers
             }
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
+        }
+
+        private IDialog<BuildComputerForm> MakeLuisDialog()
+        {
+            return Chain.From(() => new LuisDialog(BuildComputerForm.BuildForm));
         }
 
         private Activity HandleSystemMessage(Activity message)
