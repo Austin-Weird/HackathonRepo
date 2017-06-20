@@ -1,0 +1,10 @@
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot.Utilities\bin\Debug\WeirdBot.Utilities.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot.Utilities\bin\Debug\WeirdBot.Utilities.pdb
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\Personal\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.pdb
+C:\Users\Nate_2\Source\Repos\HackathonRepo\vso\src\WeirdBot\WeirdBot.Utilities\bin\Debug\WeirdBot.Utilities.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\vso\src\WeirdBot\WeirdBot.Utilities\bin\Debug\WeirdBot.Utilities.pdb
+C:\Users\Nate_2\Source\Repos\HackathonRepo\vso\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\Nate_2\Source\Repos\HackathonRepo\vso\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.dll
+C:\Users\Nate_2\Source\Repos\HackathonRepo\vso\src\WeirdBot\WeirdBot.Utilities\obj\Debug\WeirdBot.Utilities.pdb

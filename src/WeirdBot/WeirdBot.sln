@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.DataService", "WeirdBot.DataService\WeirdBot.DataService.csproj", "{2FE05001-EDD1-4A69-B75A-0E52BCE1A2D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.DataAccess.Tests", "WeirdBot.DataService.Tests\WeirdBot.DataAccess.Tests.csproj", "{7DD6ECCD-7F80-4BA0-93C8-8537717075D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.Models", "WeirdBot.Models\WeirdBot.Models.csproj", "{BE8C766C-AE41-41FE-A35E-D7D857C4F729}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.DataAccess", "WeirdBot.DataAccess\WeirdBot.DataAccess.csproj", "{B39F3C72-66B6-4DF8-B4BD-55475664F6DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot", "WeirdBot\WeirdBot.csproj", "{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeirdBot.Utilities", "WeirdBot.Utilities\WeirdBot.Utilities.csproj", "{43F70A62-29DD-48C1-ACEB-086B67C5AD20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2FE05001-EDD1-4A69-B75A-0E52BCE1A2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FE05001-EDD1-4A69-B75A-0E52BCE1A2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FE05001-EDD1-4A69-B75A-0E52BCE1A2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FE05001-EDD1-4A69-B75A-0E52BCE1A2D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DD6ECCD-7F80-4BA0-93C8-8537717075D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DD6ECCD-7F80-4BA0-93C8-8537717075D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DD6ECCD-7F80-4BA0-93C8-8537717075D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DD6ECCD-7F80-4BA0-93C8-8537717075D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE8C766C-AE41-41FE-A35E-D7D857C4F729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8C766C-AE41-41FE-A35E-D7D857C4F729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8C766C-AE41-41FE-A35E-D7D857C4F729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8C766C-AE41-41FE-A35E-D7D857C4F729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B39F3C72-66B6-4DF8-B4BD-55475664F6DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B39F3C72-66B6-4DF8-B4BD-55475664F6DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B39F3C72-66B6-4DF8-B4BD-55475664F6DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B39F3C72-66B6-4DF8-B4BD-55475664F6DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E778696-2D3B-47A6-9C80-C1EF79FC8DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43F70A62-29DD-48C1-ACEB-086B67C5AD20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
