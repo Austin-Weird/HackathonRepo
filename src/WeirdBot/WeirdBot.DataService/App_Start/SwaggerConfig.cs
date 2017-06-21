@@ -1,11 +1,11 @@
 using System.Web.Http;
-using WebActivatorEx;
-using WeirdBot.DataAccess;
 using Swashbuckle.Application;
+using WebActivatorEx;
+using WeirdBot.DataService;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace WeirdBot.DataAccess
+namespace WeirdBot.DataService
 {
     public class SwaggerConfig
     {
