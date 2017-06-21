@@ -21,8 +21,8 @@ namespace WeirdBot.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => Dialogs.RootDialog.dialog);
-                //await Conversation.SendAsync(activity, MakeLuisDialog);
+                //await Conversation.SendAsync(activity, () => RootDialog.dialog);
+                await Conversation.SendAsync(activity, MakeLuisDialog);
             }
             else
             {

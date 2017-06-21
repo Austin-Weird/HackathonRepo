@@ -20,6 +20,17 @@ namespace WeirdBot.Dialogs
             this.ComputerBuilder = buildComputerForm;
         }
 
+        private async Task Callback(IDialogContext context, IAwaitable<object> result)
+        {
+            var token = await result;
+            var name = "User";
+            context.UserData.TryGetValue<string>("Name", out name);
+            //await context.PostAsync($"Great we got that all set up for you, {name}!");
+            await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
+
+            context.Wait(MessageReceived);
+        }
+
         [LuisIntent("")]
         public async Task None(IDialogContext context, LuisResult result)
         {
@@ -31,11 +42,6 @@ namespace WeirdBot.Dialogs
         public async Task Greeting(IDialogContext context, LuisResult result)
         {
             context.Call(new GreetingDialog(), Callback);
-        }
-
-        private async Task Callback(IDialogContext context, IAwaitable<object> result)
-        {
-            context.Wait(MessageReceived);
         }
 
         [LuisIntent("BuildComputer")]
@@ -53,7 +59,7 @@ namespace WeirdBot.Dialogs
                 var value = entity.Entity.ToLower();
                 if (value == "video card")
                 {
-                    await context.PostAsync("Yes we have that!");
+                    await context.PostAsync($"Yes we have a {value}!");
                     context.Wait(MessageReceived);
                     return;
                 }
