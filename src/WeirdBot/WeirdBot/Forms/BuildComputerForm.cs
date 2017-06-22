@@ -15,7 +15,7 @@ namespace WeirdBot.Forms
         public static IForm<BuildComputerForm> BuildForm()
         {
             return new FormBuilder<BuildComputerForm>()
-                .Message("Welcome to the Computer Builder Bot!")
+                .Message("Welcome to the Computer Builder!  Type Help at any time to see your options.")
                 .Build();
         }
     }

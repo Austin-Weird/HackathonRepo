@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
@@ -9,7 +10,7 @@ using WeirdBot.Forms;
 
 namespace WeirdBot.Dialogs
 {
-    [LuisModel("d7949cc6-b70b-4457-8f87-4d43838fc9e2", "080c2b042a8e48f0a5fb5e2ef2c71778")]
+    [LuisModel("d7949cc6-b70b-4457-8f87-4d43838fc9e2", "c72b2b2073164d4c84593bc3fd9f6e98")]
     [Serializable]
     public class LuisDialog : LuisDialog<BuildComputerForm>
     {
@@ -20,12 +21,23 @@ namespace WeirdBot.Dialogs
             this.ComputerBuilder = buildComputerForm;
         }
 
-        private async Task Callback(IDialogContext context, IAwaitable<object> result)
+        private async Task GreetingCallback(IDialogContext context, IAwaitable<object> result)
+        {
+            var token = await result;
+            var name = "User";
+            var buildOptions = new List<string> { "  - I would like to build a computer" };
+            context.UserData.TryGetValue<string>("Name", out name);
+            await context.PostAsync($"You can ask about the following build options:");
+            buildOptions.ForEach(async option => await context.PostAsync(option));
+
+            context.Wait(MessageReceived);
+        }
+        private async Task BuildComputerCallback(IDialogContext context, IAwaitable<object> result)
         {
             var token = await result;
             var name = "User";
             context.UserData.TryGetValue<string>("Name", out name);
-            //await context.PostAsync($"Great we got that all set up for you, {name}!");
+            await context.PostAsync($"Great we got that all set up for you!");
             await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
 
             context.Wait(MessageReceived);
@@ -41,14 +53,14 @@ namespace WeirdBot.Dialogs
         [LuisIntent("Greeting")]
         public async Task Greeting(IDialogContext context, LuisResult result)
         {
-            context.Call(new GreetingDialog(), Callback);
+            context.Call(new GreetingDialog(), GreetingCallback);
         }
 
         [LuisIntent("BuildComputer")]
         public async Task BuildComputer(IDialogContext context, LuisResult result)
         {
             var buildComputerForm = new FormDialog<BuildComputerForm>(new BuildComputerForm(), this.ComputerBuilder, FormOptions.PromptInStart);
-            context.Call<BuildComputerForm>(buildComputerForm, Callback);
+            context.Call<BuildComputerForm>(buildComputerForm, BuildComputerCallback);
         }
 
         [LuisIntent("QueryInformation")]

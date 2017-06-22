@@ -55,6 +55,10 @@ namespace WeirdBot.Controllers
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
             }
+            else if (message.Type == ActivityTypes.EndOfConversation)
+            {
+                // Handle end of conversation
+            }
             else if (message.Type == ActivityTypes.Typing)
             {
                 // Handle knowing tha the user is typing
