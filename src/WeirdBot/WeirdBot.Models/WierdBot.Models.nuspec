@@ -13,6 +13,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="src\WeirdBot\WeirdBot.Models\bin\Release\WeirdBot.Models.dll" target="bin\WeirdBot.Models.dll" />
+    <file src="bin\debug\WeirdBot.Models.dll" target="bin\release\WeirdBot.Models.dll" />
   </files>
 </package>
