@@ -28,7 +28,7 @@ namespace WeirdBot.Dialogs
             }
             else
             {
-                await context.PostAsync(String.Format($"Hi {userName}. How can I help you today?"));
+                await context.PostAsync(string.Format("Hi {0}. How can I help you today?", userName));
                 context.Wait(MessageReceivedCompletedAsync);
             }
         }

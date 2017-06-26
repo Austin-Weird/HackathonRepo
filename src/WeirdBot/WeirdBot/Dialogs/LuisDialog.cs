@@ -27,7 +27,7 @@ namespace WeirdBot.Dialogs
             var name = "User";
             var buildOptions = new List<string> { "  - I would like to build a computer" };
             context.UserData.TryGetValue<string>("Name", out name);
-            await context.PostAsync($"You can ask about the following build options:");
+            await context.PostAsync("You can ask about the following build options:");
             buildOptions.ForEach(async option => await context.PostAsync(option));
 
             context.Wait(MessageReceived);
@@ -37,8 +37,8 @@ namespace WeirdBot.Dialogs
             var token = await result;
             var name = "User";
             context.UserData.TryGetValue<string>("Name", out name);
-            await context.PostAsync($"Great we got that all set up for you!");
-            await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
+            await context.PostAsync("Great we got that all set up for you!");
+            await context.PostAsync(string.Format("Thank you for using the Austin Weird Bot, {0}!", name));
 
             context.Wait(MessageReceived);
         }
@@ -66,12 +66,12 @@ namespace WeirdBot.Dialogs
         [LuisIntent("QueryInformation")]
         public async Task QueryInformation(IDialogContext context, LuisResult result)
         {
-            foreach(var entity in result.Entities.Where(Entity => Entity.Type == "Query"))
+            foreach (var entity in result.Entities.Where(Entity => Entity.Type == "Query"))
             {
                 var value = entity.Entity.ToLower();
                 if (value == "video card")
                 {
-                    await context.PostAsync($"Yes we have a {value}!");
+                    await context.PostAsync(string.Format("Yes we have a {0}!",value));
                     context.Wait(MessageReceived);
                     return;
                 }

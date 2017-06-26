@@ -32,7 +32,7 @@ namespace WeirdBot.Dialogs
             var token = await item;
             var name = "User";
             context.UserData.TryGetValue<string>("Name", out name);
-            return Chain.Return($"Thank you for using the Austin Weird Bot, {name}!");
+            return Chain.Return(string.Format("Thank you for using the Austin Weird Bot, {0}!", name));
         }
     }
 }
