@@ -21,8 +21,8 @@ namespace WeirdBot.Controllers
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => Dialogs.RootDialog.dialog);
-                //await Conversation.SendAsync(activity, MakeLuisDialog);
+                //await Conversation.SendAsync(activity, () => RootDialog.dialog);
+                await Conversation.SendAsync(activity, MakeLuisDialog);
             }
             else
             {
@@ -54,6 +54,10 @@ namespace WeirdBot.Controllers
             {
                 // Handle add/remove from contact lists
                 // Activity.From + Activity.Action represent what happened
+            }
+            else if (message.Type == ActivityTypes.EndOfConversation)
+            {
+                // Handle end of conversation
             }
             else if (message.Type == ActivityTypes.Typing)
             {

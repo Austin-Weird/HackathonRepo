@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <version>$version$</version>
+    <authors>Sogeti Hackathon</authors>
+    <owners>Sogeti Hackathon Austin Team</owners>
+    <id>AustinWeirdBot.Models</id>
+    <title>AustinWeirdBot.Models</title>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Description</description>
+    <copyright>Copyright Sogeti USA LLC 2017</copyright>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\debug\WeirdBot.Models.dll" target="bin\release\WeirdBot.Models.dll" />
+  </files>
+</package>

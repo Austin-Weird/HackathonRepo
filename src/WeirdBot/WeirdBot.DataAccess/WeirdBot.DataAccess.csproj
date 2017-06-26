@@ -75,6 +75,7 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="WeirdBot.DataAccess.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeirdBot.Models\WeirdBot.Models.csproj">

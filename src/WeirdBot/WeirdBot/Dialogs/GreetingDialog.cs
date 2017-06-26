@@ -10,25 +10,33 @@ namespace WeirdBot.Dialogs
     {
         public async Task StartAsync(IDialogContext context)
         {
-            await context.PostAsync("Hi! Welcome to the Austin Weird Bot!");
             await Respond(context);
-            context.Wait(MessageReceivedAsync);
         }
 
-        private static async Task Respond(IDialogContext context)
+        private async Task Respond(IDialogContext context)
         {
             var userName = string.Empty;
             context.UserData.TryGetValue<string>("Name", out userName);
 
             if (string.IsNullOrEmpty(userName))
             {
-                await context.PostAsync("What is your name?");
+                await context.PostAsync("Hi! Welcome to the Austin Weird Bot!");
+                await context.PostAsync("I am a professional consultant available to answer your questions on 'what do I need to build a Do It Yourself(DIY) project'.");
+                await context.PostAsync("First, what is your name?");
                 context.UserData.SetValue<bool>("GetName", true);
+                context.Wait(MessageReceivedAsync);
             }
             else
             {
                 await context.PostAsync(String.Format($"Hi {userName}. How can I help you today?"));
+                context.Wait(MessageReceivedCompletedAsync);
             }
+        }
+
+        public virtual async Task MessageReceivedCompletedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
+        {
+            var message = await result;
+            context.Done(message);
         }
 
         public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
