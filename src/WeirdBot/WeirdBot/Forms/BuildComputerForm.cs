@@ -9,7 +9,7 @@ namespace WeirdBot.Forms
     public class BuildComputerForm
     {
         public string PriceRange;
-        public List<Category> Category;
+        public List<ComponentType> Category;
 
 
         public static IForm<BuildComputerForm> BuildForm()

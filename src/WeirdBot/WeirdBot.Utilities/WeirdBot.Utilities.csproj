@@ -40,10 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HardDriveRecommendationEngine.cs" />
+    <Compile Include="IComponentRecommendationEngine.cs" />
+    <Compile Include="NullRecommendationEngine.cs" />
+    <Compile Include="ProcessorRecommendationEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RamRecommendationEngine.cs" />
+    <Compile Include="RecommendationFactory.cs" />
+    <Compile Include="SoundCardRecommendationEngine.cs" />
+    <Compile Include="VideoCardRecommendationEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="WeirdBot.Utilities.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WeirdBot.DataAccess\WeirdBot.DataAccess.csproj">
+      <Project>{b39f3c72-66b6-4df8-b4bd-55475664f6dd}</Project>
+      <Name>WeirdBot.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeirdBot.Models\WeirdBot.Models.csproj">
+      <Project>{be8c766c-ae41-41fe-a35e-d7d857c4f729}</Project>
+      <Name>WeirdBot.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
