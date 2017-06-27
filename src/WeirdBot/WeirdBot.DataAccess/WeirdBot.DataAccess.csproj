@@ -68,8 +68,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataObjects\ProductEntity.cs" />
-    <Compile Include="ProductRepository.cs" />
+    <Compile Include="DataObjects\ComponentEntity.cs" />
+    <Compile Include="ComponentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

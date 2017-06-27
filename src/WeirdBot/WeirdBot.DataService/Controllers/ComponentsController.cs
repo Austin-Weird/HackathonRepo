@@ -93,9 +93,15 @@ namespace WeirdBot.DataService.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/priceLimit/{price}/recommendation")]
         [HttpPost()]
-        public IEnumerable<Component> GetRecommendation(float price, [FromBody]List<Category> categories)
+        public Recommendation GetRecommendation(float price, [FromBody]List<Usage> categories)
         {
-            return fakeComponents;
+            return new Recommendation() {
+                HardDiskDrive = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.HardDrive),
+                Processor = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.Processor),
+                RamKit = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.RAM),
+                SoundCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.SoundCard),
+                VideoCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.VideoCard)
+            };
         }
 
         //'  /api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components

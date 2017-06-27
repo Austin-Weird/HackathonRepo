@@ -14,9 +14,9 @@ namespace WeirdBot.Services
     {
         public ApiDataService() { }
 
-        public async Task<List<Component>> GetComputerPartsRecommendation(BuildComputerForm result)//float price, List<Category> choices)
+        public async Task<Recommendation> GetComputerPartsRecommendation(BuildComputerForm result)//float price, List<Category> choices)
         {
-            var run = new List<Component>();
+            var run = new Recommendation();
             using (var httpClient = new HttpClient())
             {
                 var url = new UriBuilder();
