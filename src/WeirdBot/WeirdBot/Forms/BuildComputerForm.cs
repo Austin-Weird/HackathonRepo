@@ -8,7 +8,7 @@ namespace WeirdBot.Forms
     [Serializable]
     public class BuildComputerForm
     {
-        public string PriceRange;
+        public float PriceLimit;
         public List<Category> Category;
 
 

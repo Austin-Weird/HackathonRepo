@@ -7,6 +7,7 @@ using Microsoft.Bot.Builder.FormFlow;
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using WeirdBot.Forms;
+using WeirdBot.Services;
 
 namespace WeirdBot.Dialogs
 {
@@ -32,11 +33,15 @@ namespace WeirdBot.Dialogs
 
             context.Wait(MessageReceived);
         }
-        private async Task BuildComputerCallback(IDialogContext context, IAwaitable<object> result)
+
+        private async Task BuildComputerCallback(IDialogContext context, IAwaitable<BuildComputerForm> result)
         {
             var token = await result;
             var name = "User";
             context.UserData.TryGetValue<string>("Name", out name);
+            var api = new ApiDataService();
+            var recommendation = await api.GetComputerPartsRecommendation(token);
+
             await context.PostAsync("Great we got that all set up for you!");
             await context.PostAsync(string.Format("Thank you for using the Austin Weird Bot, {0}!", name));
 

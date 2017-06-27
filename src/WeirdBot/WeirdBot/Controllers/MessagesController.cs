@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace WeirdBot.Controllers
                 //await Conversation.SendAsync(activity, () => RootDialog.dialog);
                 await Conversation.SendAsync(activity, MakeLuisDialog);
             }
+            //else if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Count > 0 && !activity.MembersAdded.Any(m => m.Name.ToLower() == "bot"))
+            //{
+            //    // Attempt to start the conversation here?
+            //    await Conversation.SendAsync(activity, MakeLuisDialog);
+            //}
             else
             {
                 HandleSystemMessage(activity);

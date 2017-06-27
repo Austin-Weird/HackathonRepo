@@ -7,7 +7,7 @@ using System.Web.Http;
 using Swashbuckle.Swagger.Annotations;
 using WeirdBot.Models;
 
-namespace WeirdBot.DataAccess.Controllers
+namespace WeirdBot.DataService.Controllers
 {
     public class ComponentsController : ApiController
     {
@@ -78,11 +78,34 @@ namespace WeirdBot.DataAccess.Controllers
         }
 
         // GET api/category/3/components
+        [SwaggerOperation("GetByCategory")]
+        [SwaggerResponse(HttpStatusCode.OK)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/category/{type}/components")]
         public IEnumerable<Component> GetByCategory(ComponentType type)
         {
             return fakeComponents.Where(p => p.Category == type);
         }
 
+        //'  /api/priceLimit/{price}/usage/{serialized usage choices}/recommendation
+        [SwaggerOperation("GetRecommendation")]
+        [SwaggerResponse(HttpStatusCode.OK)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [Route("api/priceLimit/{price}/recommendation")]
+        [HttpPost()]
+        public IEnumerable<Component> GetRecommendation(float price, [FromBody]List<Category> categories)
+        {
+            return fakeComponents;
+        }
+
+        //'  /api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components
+        //[SwaggerOperation("GetByUsage")]
+        //[SwaggerResponse(HttpStatusCode.OK)]
+        //[SwaggerResponse(HttpStatusCode.NotFound)]
+        //[Route("api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components")]
+        //public IEnumerable<Component> GetByUsage(ComponentType type, float price, List<Category> usage)
+        //{
+        //    return null; // fakeComponents.Where(p => p.Category == type);
+        //}
     }
 }
