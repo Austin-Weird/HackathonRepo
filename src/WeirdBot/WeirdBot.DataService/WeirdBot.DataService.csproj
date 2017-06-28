@@ -195,9 +195,17 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WeirdBot.DataAccess\WeirdBot.DataAccess.csproj">
+      <Project>{b39f3c72-66b6-4df8-b4bd-55475664f6dd}</Project>
+      <Name>WeirdBot.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WeirdBot.Models\WeirdBot.Models.csproj">
       <Project>{be8c766c-ae41-41fe-a35e-d7d857c4f729}</Project>
       <Name>WeirdBot.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeirdBot.Utilities\WeirdBot.Utilities.csproj">
+      <Project>{43f70a62-29dd-48c1-aceb-086b67c5ad20}</Project>
+      <Name>WeirdBot.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
