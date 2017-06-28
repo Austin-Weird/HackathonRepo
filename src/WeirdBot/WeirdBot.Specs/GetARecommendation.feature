@@ -3,8 +3,8 @@ As a WeirdBot User
 I want to talk with the bot
 To get a recommended build list for my ideal computer
 
-Scenario: Get a recommendation for a general computer
-	Given I have entered a price range between $200 and $600
+Scenario: Get a recommendation for a computer
+	Given I have entered a price cap of $800
 	When I select a general use computer
 	Then the bot requests and displays a recommended build
 		And the bot allows me to accept the build
@@ -13,9 +13,21 @@ Scenario: Get a recommendation for a general computer
 	When I enter my email
 	Then the bot sends my recommendation to the entered email address
 
-
-Scenario: Get a recommendation for a gaming computer
-
 Scenario: Enter restrictions that prevent a valid recommendation
+	Given I have entered a price cap of $50
+		When I select a gaming computer
+	Then the bot requests a recommendation and displays the null recommendation
+		And the bot allows me to raise my price cap
 
 Scenario: Modify recommended build
+	Given I have received a recommended build
+		And the bot allows me to modify the build
+	When I say 'yes'
+	Then the bot allows me to select which component type to modify
+	When I select a component type
+	Then the bot displays a list of components that meet my usage criteria
+	When I select a component
+	Then the bot updates the recommendation 
+		And redisplays the recommendation
+		And allows me to accept or modify the build
+		 

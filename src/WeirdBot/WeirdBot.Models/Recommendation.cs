@@ -13,5 +13,29 @@ namespace WeirdBot.Models
         public Component RamKit { get; set; }
         public Component SoundCard { get; set; }
         public Component VideoCard { get; set; }
+
+        public void SetComponent(ComponentType type, Component item)
+        {
+            switch (type)
+            {
+                case ComponentType.HardDrive:
+                    HardDiskDrive = item;
+                    break;
+                case ComponentType.Processor:
+                    Processor = item;
+                    break;
+                case ComponentType.RAM:
+                    RamKit = item;
+                    break;
+                case ComponentType.SoundCard:
+                    SoundCard = item;
+                    break;
+                case ComponentType.VideoCard:
+                    VideoCard = item;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

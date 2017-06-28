@@ -40,17 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HardDriveRecommendationEngine.cs" />
-    <Compile Include="IComponentRecommendationEngine.cs" />
-    <Compile Include="NullRecommendationEngine.cs" />
-    <Compile Include="ProcessorRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\HardDriveRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\IComponentRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\NullRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\ProcessorRecommendationEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RamRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\RamRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\RecommendationEngineBase.cs" />
+    <Compile Include="RecommendationEngineSupplier.cs" />
     <Compile Include="RecommendationFactory.cs" />
-    <Compile Include="SoundCardRecommendationEngine.cs" />
-    <Compile Include="VideoCardRecommendationEngine.cs" />
+    <Compile Include="RecommendationEngines\SoundCardRecommendationEngine.cs" />
+    <Compile Include="UsageQualityRank.cs" />
+    <Compile Include="UsagePriceProfile.cs" />
+    <Compile Include="RecommendationEngines\VideoCardRecommendationEngine.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="WeirdBot.Utilities.nuspec" />
   </ItemGroup>
   <ItemGroup>

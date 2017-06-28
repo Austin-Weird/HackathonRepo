@@ -64,12 +64,12 @@
       <HintPath>..\packages\WindowsAzure.Storage.8.1.4\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Moq, Version=4.7.25.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.7.25\lib\net45\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.7.63.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.7.63\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -102,6 +102,10 @@
     <ProjectReference Include="..\WeirdBot.Models\WeirdBot.Models.csproj">
       <Project>{be8c766c-ae41-41fe-a35e-d7d857c4f729}</Project>
       <Name>WeirdBot.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WeirdBot.Testing\WeirdBot.Testing.csproj">
+      <Project>{f957fb50-85b2-4142-81a9-e9f0363bcedd}</Project>
+      <Name>WeirdBot.Testing</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
