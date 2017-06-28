@@ -20,15 +20,14 @@ namespace WeirdBot.Dialogs
 
             if (string.IsNullOrEmpty(userName))
             {
-                await context.PostAsync("Hi! Welcome to the Austin Weird Bot!");
-                await context.PostAsync("I am a professional consultant available to answer your questions on 'what do I need to build a Do It Yourself(DIY) project'.");
+                await context.PostAsync("Hi! &nbsp;&nbsp;Welcome to the Austin Weird Bot!  \r\nI am a professional consultant available to answer your questions on 'What do I need to build a Do It Yourself(DIY) project'.");
                 await context.PostAsync("First, what is your name?");
                 context.UserData.SetValue<bool>("GetName", true);
                 context.Wait(MessageReceivedAsync);
             }
             else
             {
-                await context.PostAsync(string.Format("Hi {0}. How can I help you today?", userName));
+                await context.PostAsync($"Hi {userName}. How can I help you today?");
                 context.Wait(MessageReceivedCompletedAsync);
             }
         }

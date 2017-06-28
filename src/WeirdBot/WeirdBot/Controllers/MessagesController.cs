@@ -28,7 +28,18 @@ namespace WeirdBot.Controllers
             //else if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Count > 0 && !activity.MembersAdded.Any(m => m.Name.ToLower() == "bot"))
             //{
             //    // Attempt to start the conversation here?
-            //    await Conversation.SendAsync(activity, MakeLuisDialog);
+            //    //await Conversation.SendAsync(activity, MakeLuisDialog);
+                //var userAccount = new ChannelAccount(name: "Larry", id: "@UV357341");
+                //var connector = new ConnectorClient(new Uri(actvity.ServiceUrl));
+                //var conversationId = await connector.Conversations.CreateDirectConversationAsync(botAccount, userAccount);
+
+                //IMessageActivity message = Activity.CreateMessageActivity();
+                //message.From = botAccount;
+                //message.Recipient = userAccount;
+                //message.Conversation = new ConversationAccount(id: conversationId.Id);
+                //message.Text = "Hello, Larry!";
+                //message.Locale = "en-Us";
+                //await connector.Conversations.SendToConversationAsync((Activity)message); 
             //}
             else
             {

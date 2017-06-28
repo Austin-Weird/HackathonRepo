@@ -8,6 +8,7 @@ namespace WeirdBot.Models
 {
     public enum Usage
     {
+        None,
         General,
         Media,
         Business,
