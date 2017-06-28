@@ -6,6 +6,8 @@ using System.Net.Http;
 using System.Web.Http;
 using Swashbuckle.Swagger.Annotations;
 using WeirdBot.Models;
+using WeirdBot.Utilities;
+using WeirdBot.DataAccess;
 
 namespace WeirdBot.DataService.Controllers
 {
@@ -95,13 +97,40 @@ namespace WeirdBot.DataService.Controllers
         [HttpPost()]
         public Recommendation GetRecommendation(float price, [FromBody]List<Usage> categories)
         {
-            return new Recommendation() {
+            return new Recommendation()
+            {
                 HardDiskDrive = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.HardDrive),
                 Processor = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.Processor),
                 RamKit = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.RAM),
                 SoundCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.SoundCard),
                 VideoCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.VideoCard)
             };
+        }
+
+        [SwaggerOperation("GetRecommendation")]
+        [SwaggerResponse(HttpStatusCode.OK)]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [Route("api/category/{usage}/lowPrice/{low}/highPrice/{high}/recommendation")]
+        [HttpPost()]
+        public Recommendation GetRecommendation(Usage usage, decimal low, decimal high)
+        {
+
+            ComponentRepository repo = new ComponentRepository();
+            
+            var sut = new RecommendationFactory(repo, new RecommendationEngineSupplier());
+
+            Usage[] usageArray = new Usage[] { usage };
+
+            return sut.GetRecommendation(usageArray, high);
+
+            //return new Recommendation()
+            //{
+            //    HardDiskDrive = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.HardDrive),
+            //    Processor = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.Processor),
+            //    RamKit = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.RAM),
+            //    SoundCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.SoundCard),
+            //    VideoCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.VideoCard)
+            //};
         }
 
         //'  /api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components
@@ -113,5 +142,5 @@ namespace WeirdBot.DataService.Controllers
         //{
         //    return null; // fakeComponents.Where(p => p.Category == type);
         //}
+        }
     }
-}
