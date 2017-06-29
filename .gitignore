@@ -289,4 +289,4 @@ Desktop.ini
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
-/src/WeirdBot/WeirdBot.Specs/Get A Recommendation Feature.pdf
+*.pdf

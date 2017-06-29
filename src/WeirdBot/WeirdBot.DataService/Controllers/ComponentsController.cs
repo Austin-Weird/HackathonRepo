@@ -89,13 +89,13 @@ namespace WeirdBot.DataService.Controllers
             return fakeComponents.Where(p => p.Category == type);
         }
 
-        //'  /api/priceLimit/{price}/usage/{serialized usage choices}/recommendation
+        // POST api/priceLimit/500/recommendation -> {"Usage": ["General","Gaming"]}
         [SwaggerOperation("GetRecommendation")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/priceLimit/{price}/recommendation")]
         [HttpPost()]
-        public Recommendation GetRecommendation(float price, [FromBody]List<Usage> categories)
+        public Recommendation GetRecommendation(decimal price, [FromBody]List<Usage> categories)
         {
             return new Recommendation()
             {
@@ -107,6 +107,7 @@ namespace WeirdBot.DataService.Controllers
             };
         }
 
+        // POST api/category/{usage}/lowPrice/{low}/highPrice/{high}/recommendation
         [SwaggerOperation("GetRecommendation")]
         [SwaggerResponse(HttpStatusCode.OK)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
@@ -133,7 +134,7 @@ namespace WeirdBot.DataService.Controllers
             //};
         }
 
-        //'  /api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components
+        // POST api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components
         //[SwaggerOperation("GetByUsage")]
         //[SwaggerResponse(HttpStatusCode.OK)]
         //[SwaggerResponse(HttpStatusCode.NotFound)]
@@ -142,5 +143,5 @@ namespace WeirdBot.DataService.Controllers
         //{
         //    return null; // fakeComponents.Where(p => p.Category == type);
         //}
-        }
     }
+}
