@@ -70,68 +70,82 @@ namespace WeirdBot.Utilities.Specs
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("I have entered a price cap of $800", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have entered a price cap of $800.00", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
  testRunner.When("I select a general use computer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.Then("the bot requests and displays a recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
   testRunner.And("the bot allows me to accept the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.When("I accept the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Accept Build", SourceLine=11)]
+        public virtual void AcceptBuild()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accept Build", ((string[])(null)));
 #line 12
- testRunner.Then("the bot requests my email to send the recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
 #line 13
- testRunner.When("I enter my email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have received a recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 14
+  testRunner.And("the bot allows me to accept the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.When("I accept the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("the bot requests my email to send the recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 17
+ testRunner.When("I enter my email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
  testRunner.Then("the bot sends my recommendation to the entered email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Enter restrictions that prevent a valid recommendation", SourceLine=15)]
+        [TechTalk.SpecRun.ScenarioAttribute("Enter restrictions that prevent a valid recommendation", SourceLine=19)]
         public virtual void EnterRestrictionsThatPreventAValidRecommendation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Enter restrictions that prevent a valid recommendation", ((string[])(null)));
-#line 16
-this.ScenarioSetup(scenarioInfo);
-#line 17
- testRunner.Given("I have entered a price cap of $50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 18
-  testRunner.When("I select a gaming computer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 19
- testRunner.Then("the bot requests a recommendation and displays the null recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 20
+this.ScenarioSetup(scenarioInfo);
+#line 21
+ testRunner.Given("I have entered a price cap of $50", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+  testRunner.When("I select a gaming computer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("the bot requests a recommendation and displays the null recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
   testRunner.And("the bot allows me to raise my price cap", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Modify recommended build", SourceLine=21)]
+        [TechTalk.SpecRun.ScenarioAttribute("Modify recommended build", SourceLine=26)]
         public virtual void ModifyRecommendedBuild()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Modify recommended build", ((string[])(null)));
-#line 22
-this.ScenarioSetup(scenarioInfo);
-#line 23
- testRunner.Given("I have received a recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 24
-  testRunner.And("the bot allows me to modify the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 25
- testRunner.When("I say \'yes\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 26
- testRunner.Then("the bot allows me to select which component type to modify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
- testRunner.When("I select a component type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 28
- testRunner.Then("the bot displays a list of components that meet my usage criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("I have received a recommended build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 29
- testRunner.When("I select a component", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("the bot allows me to modify the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.Then("the bot updates the recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I say \'yes\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 31
-  testRunner.And("redisplays the recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("the bot allows me to select which component type to modify", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 32
+ testRunner.When("I select a component type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+ testRunner.Then("the bot displays a list of components that meet my usage criteria", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 34
+ testRunner.When("I select a component", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("the bot updates the recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+  testRunner.And("redisplays the recommendation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
   testRunner.And("allows me to accept or modify the build", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();

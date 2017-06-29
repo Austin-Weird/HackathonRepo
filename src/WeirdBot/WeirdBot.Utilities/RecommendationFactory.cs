@@ -12,7 +12,7 @@ namespace WeirdBot.Utilities
     {
         private ComponentRepository componentDb;
         private RecommendationEngineSupplier recommendationEngineSource;
-        public RecommendationFactory(ComponentRepository db, RecommendationEngineSupplier engineSource)
+        public RecommendationFactory(IComponentRepository db, RecommendationEngineSupplier engineSource)
         {
             componentDb = db;
             recommendationEngineSource = engineSource;

@@ -77,24 +77,19 @@ namespace WeirdBot.Models
             set
             {
                 SetComponentProperty(value, ComponentType.VideoCard, ref _vc);
-                //if (value.Category != ComponentType.VideoCard)
-                //    throw new ArgumentException("Component is not of correct type.");
-                //_total += value.Price;
-                //_vc = value;
-                //if (value == null)
-                //    ResetTotal();
             }
         }
 
         private void SetComponentProperty(Component value, ComponentType type, ref Component backingVariable)
         {
-            if (value.Category != type)
+            if (value != null && value.Category != type)
                 throw new ArgumentException("Component is not of correct type.");
-            _total += value.Price;
+            _total += value != null ? value.Price : 0;
             backingVariable = value;
             if (value == null)
                 ResetTotal();
         }
+
         public decimal TotalPrice
         {
             get

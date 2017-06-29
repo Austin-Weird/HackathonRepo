@@ -115,7 +115,6 @@ namespace WeirdBot.DataService.Controllers
         [HttpPost()]
         public Recommendation GetRecommendation(Usage usage, decimal low, decimal high)
         {
-
             ComponentRepository repo = new ComponentRepository();
             
             var sut = new RecommendationFactory(repo, new RecommendationEngineSupplier());
@@ -123,25 +122,7 @@ namespace WeirdBot.DataService.Controllers
             Usage[] usageArray = new Usage[] { usage };
 
             return sut.GetRecommendation(usageArray, high);
-
-            //return new Recommendation()
-            //{
-            //    HardDiskDrive = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.HardDrive),
-            //    Processor = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.Processor),
-            //    RamKit = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.RAM),
-            //    SoundCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.SoundCard),
-            //    VideoCard = fakeComponents.FirstOrDefault(c => c.Category == ComponentType.VideoCard)
-            //};
         }
 
-        // POST api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components
-        //[SwaggerOperation("GetByUsage")]
-        //[SwaggerResponse(HttpStatusCode.OK)]
-        //[SwaggerResponse(HttpStatusCode.NotFound)]
-        //[Route("api/category/{component type}/priceLimit/{price}/usage/{serialized usage}/components")]
-        //public IEnumerable<Component> GetByUsage(ComponentType type, float price, List<Category> usage)
-        //{
-        //    return null; // fakeComponents.Where(p => p.Category == type);
-        //}
     }
 }
