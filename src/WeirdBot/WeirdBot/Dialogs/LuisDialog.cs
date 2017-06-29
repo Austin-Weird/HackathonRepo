@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.FormFlow;
@@ -42,8 +43,16 @@ namespace WeirdBot.Dialogs
             var api = new ApiDataService();
             var recommendation = await api.GetComputerPartsRecommendation(token);
 
-            await context.PostAsync("Great we got that all set up for you!");
-            await context.PostAsync(string.Format("Thank you for using the Austin Weird Bot, {0}!", name));
+            var builder = new StringBuilder();
+            builder.Append($"Great we got that all set up for you!  \r\nHere is your recommended computer build: ");
+            if (recommendation.Processor != null) builder.Append($"  \r\n  - **CPU** = {recommendation.Processor.Name}, {recommendation.Processor.Price}, {recommendation.Processor.VendorUrl}");
+            if (recommendation.RamKit != null) builder.Append($"  \r\n  - **Memory** = {recommendation.RamKit.Name}, {recommendation.RamKit.Price}, {recommendation.RamKit.VendorUrl}");
+            if (recommendation.HardDiskDrive != null) builder.Append($"  \r\n  - **Hard Drive** = {recommendation.HardDiskDrive.Name}, {recommendation.HardDiskDrive.Price}, {recommendation.HardDiskDrive.VendorUrl}");
+            if (recommendation.SoundCard != null) builder.Append($"  \r\n  - **Sound Card** = {recommendation.SoundCard.Name}, {recommendation.SoundCard.Price}, {recommendation.SoundCard.VendorUrl}");
+            if (recommendation.VideoCard != null) builder.Append($"  \r\n  - **Video Card** = {recommendation.VideoCard.Name}, {recommendation.VideoCard.Price}, {recommendation.VideoCard.VendorUrl}");
+            
+            await context.PostAsync(builder.ToString());
+            await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
 
             context.Wait(MessageReceived);
         }
@@ -76,7 +85,7 @@ namespace WeirdBot.Dialogs
                 var value = entity.Entity.ToLower();
                 if (value == "video card")
                 {
-                    await context.PostAsync(string.Format("Yes we have a {0}!",value));
+                    await context.PostAsync("Yes we have a {value}!");
                     context.Wait(MessageReceived);
                     return;
                 }

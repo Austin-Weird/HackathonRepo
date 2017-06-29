@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using WeirdBot.Forms;
@@ -14,17 +16,24 @@ namespace WeirdBot.Services
     {
         public ApiDataService() { }
 
-        public async Task<Recommendation> GetComputerPartsRecommendation(BuildComputerForm result)//float price, List<Category> choices)
+        public async Task<Recommendation> GetComputerPartsRecommendation(BuildComputerForm result)
         {
-            var run = new Recommendation();
+            var recommendation = new Recommendation();
             using (var httpClient = new HttpClient())
             {
-                var url = new UriBuilder();
-                httpClient.BaseAddress = url.Uri;
-                //var response = await httpClient.PostAsJsonAsync($"/api/priceLimit/{result.PriceLimit}/usage/getRecommendation/", result.Category);
+                var apiKey = ConfigurationManager.AppSettings["ApiKey"];
+                httpClient.BaseAddress = new Uri(apiKey);
+                httpClient.DefaultRequestHeaders.Accept.Clear();
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
+                var response = await httpClient.PostAsJsonAsync($"/api/priceLimit/{result.PriceLimit}/recommendation/", result.Category);
+                response.EnsureSuccessStatusCode();
+
+                // Deserialize the updated product from the response body.
+                recommendation = await response.Content.ReadAsAsync<Recommendation>();
+                return recommendation;
             }
-            return run;
         }
+
     }
 }

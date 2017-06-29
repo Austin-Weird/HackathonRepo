@@ -25,11 +25,19 @@ namespace WeirdBot.Controllers
                 //await Conversation.SendAsync(activity, () => RootDialog.dialog);
                 await Conversation.SendAsync(activity, MakeLuisDialog);
             }
-            //else if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Count > 0 && !activity.MembersAdded.Any(m => m.Name.ToLower() == "bot"))
-            //{
-            //    // Attempt to start the conversation here?
-            //    await Conversation.SendAsync(activity, MakeLuisDialog);
-            //}
+            else if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Count > 0 && !activity.MembersAdded.Any(m => m.Name.ToLower() == "bot"))
+            {
+                // Start the conversation here
+                var userAccount = activity.From;
+                var botAccount = activity.Recipient;
+                var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                var conversationId = await connector.Conversations.CreateDirectConversationAsync(botAccount, userAccount);
+
+                var message = activity.CreateReply();
+                message.Text = "Hi! &nbsp;&nbsp;Welcome to the Austin Weird Bot!" +
+                    "  \r\nI am a professional consultant available to answer your questions on 'What do I need to build a Do It Yourself(DIY) project'.";
+                await connector.Conversations.SendToConversationWithHttpMessagesAsync(message,conversationId.Id);
+            }
             else
             {
                 HandleSystemMessage(activity);
