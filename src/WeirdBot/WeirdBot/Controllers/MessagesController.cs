@@ -27,7 +27,7 @@ namespace WeirdBot.Controllers
             }
             else if (activity.Type == ActivityTypes.ConversationUpdate && activity.MembersAdded.Count > 0 && !activity.MembersAdded.Any(m => m.Name.ToLower() == "bot"))
             {
-                // Attempt to start the conversation here?
+                // Start the conversation here
                 var userAccount = activity.From;
                 var botAccount = activity.Recipient;
                 var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
@@ -37,40 +37,6 @@ namespace WeirdBot.Controllers
                 message.Text = "Hi! &nbsp;&nbsp;Welcome to the Austin Weird Bot!" +
                     "  \r\nI am a professional consultant available to answer your questions on 'What do I need to build a Do It Yourself(DIY) project'.";
                 await connector.Conversations.SendToConversationWithHttpMessagesAsync(message,conversationId.Id);
-
-
-                // #1st way
-                //var userAccount = new ChannelAccount(name: "default-user", id: "default-user");
-                //var botAccount = new ChannelAccount() { Id = "934493jn5f6f348f", Name = "console-Bot" };
-                //var connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                //var conversationId = await connector.Conversations.CreateDirectConversationAsync(botAccount, userAccount);
-
-                //IMessageActivity message = Activity.CreateMessageActivity();
-                //message.From = botAccount;
-                //message.Recipient = userAccount;
-                //message.Conversation = new ConversationAccount(id: conversationId.Id);
-                //message.Text = "Hello, Larry!";
-                //message.Locale = "en-Us";
-                //await connector.Conversations.SendToConversationAsync((Activity)message);
-
-
-                // #2nd way
-                //var userAccount = new ChannelAccount() { Id = "default-user", Name = "user" };
-                //var botAccount = new ChannelAccount() { Id = "934493jn5f6f348f", Name = "console-Bot" };
-                //string url = "{serviceUrl}";
-
-                //MicrosoftAppCredentials.TrustServiceUrl(url, DateTime.Now.AddDays(7));
-                //var account = new MicrosoftAppCredentials("{MicrosoftAppIdKey}", "{MicrosoftAppPasswordKey}");
-                //var connector = new ConnectorClient(new Uri(url), account);
-
-                //IMessageActivity message = Activity.CreateMessageActivity();
-                //message.From = botAccount;
-                //message.Recipient = userAccount;
-                //message.Conversation = new ConversationAccount() { Id = "{conversationId}" };
-                //message.Text = "Message sent from console application!!!";
-                //message.Locale = "en-us";
-                //var response = await connector.Conversations.SendToConversationAsync((Activity)message);
-                //Console.WriteLine($"response:{response.Id}");
             }
             else
             {
