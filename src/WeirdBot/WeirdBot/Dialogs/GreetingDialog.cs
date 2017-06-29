@@ -10,32 +10,26 @@ namespace WeirdBot.Dialogs
     {
         public async Task StartAsync(IDialogContext context)
         {
-            await Respond(context);
+            var message = context.MakeMessage();
+            await Respond(context, message);
         }
 
-        private async Task Respond(IDialogContext context)
+        private async Task Respond(IDialogContext context, IMessageActivity result)
         {
             var userName = string.Empty;
             context.UserData.TryGetValue<string>("Name", out userName);
 
             if (string.IsNullOrEmpty(userName))
             {
-                await context.PostAsync("Hi! &nbsp;&nbsp;Welcome to the Austin Weird Bot!  \r\nI am a professional consultant available to answer your questions on 'What do I need to build a Do It Yourself(DIY) project'.");
-                await context.PostAsync("First, what is your name?");
+                await context.PostAsync("Hello!  What is your name?");
                 context.UserData.SetValue<bool>("GetName", true);
                 context.Wait(MessageReceivedAsync);
             }
             else
             {
                 await context.PostAsync($"Hi {userName}. How can I help you today?");
-                context.Wait(MessageReceivedCompletedAsync);
+                context.Done(result);
             }
-        }
-
-        public virtual async Task MessageReceivedCompletedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
-        {
-            var message = await result;
-            context.Done(message);
         }
 
         public virtual async Task MessageReceivedAsync(IDialogContext context, IAwaitable<IMessageActivity> result)
@@ -54,8 +48,7 @@ namespace WeirdBot.Dialogs
                 context.UserData.SetValue<bool>("GetName", false);
             }
 
-            await Respond(context);
-            context.Done(message);
+            await Respond(context, message);
         }
     }
 }
