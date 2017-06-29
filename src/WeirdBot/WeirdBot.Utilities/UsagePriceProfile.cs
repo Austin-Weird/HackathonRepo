@@ -4,9 +4,9 @@ using WeirdBot.Models;
 
 namespace WeirdBot.Utilities
 {
-    internal class UsagePriceProfile
+    public class UsageProfiles
     {
-        internal static decimal GetPricePercentage(ComponentType type, Usage[] usage)
+        public static decimal GetPricePercentage(ComponentType type, Usage[] usage)
         {
             decimal percentage = decimal.MinValue;
             foreach (var item in usage)
@@ -36,7 +36,7 @@ namespace WeirdBot.Utilities
         }
     }
 
-    internal class GamingPriceProfile: Dictionary<ComponentType, decimal>
+    internal class GamingPriceProfile : Dictionary<ComponentType, decimal>
     {
         public GamingPriceProfile()
         {
@@ -45,6 +45,18 @@ namespace WeirdBot.Utilities
             Add(ComponentType.RAM, 0.135M);
             Add(ComponentType.SoundCard, 0.060M);
             Add(ComponentType.VideoCard, 0.349M);
+        }
+    }
+
+    internal class GamingQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public GamingQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Best);
+            Add(ComponentType.Processor, Quality.Best);
+            Add(ComponentType.RAM, Quality.Best);
+            Add(ComponentType.SoundCard, Quality.Best);
+            Add(ComponentType.VideoCard, Quality.Best);
         }
     }
 

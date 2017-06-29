@@ -24,9 +24,10 @@ namespace WeirdBot.Utilities
             if (!IsValid(usage, priceCap))
                 return null;
 
-            var priceTarget = GetPriceTarget(usage, priceCap);
-            var powerRank = GetPowerRank(usage);
-            return _db.GetComponentByPriceAndPowerRank(type, powerRank, priceTarget);
+            var priceTarget = GetPriceTarget(type, usage, priceCap);
+            var quality = GetComponentQuality(usage);
+
+            return _db.GetComponentByPriceAndQuality(type, quality, priceTarget);
         }
 
         protected bool IsValid(Usage[] usage, decimal priceCap)
@@ -39,14 +40,14 @@ namespace WeirdBot.Utilities
         }
 
 
-        protected Quality GetPowerRank(Usage[] usage)
+        protected Quality GetComponentQuality(Usage[] usage)
         {
             return UsageQualityRank.GetHighetstRankOf(usage);
         }
 
-        protected decimal GetPriceTarget(Usage[] usage, decimal highPrice)
+        protected decimal GetPriceTarget(ComponentType type, Usage[] usage, decimal highPrice)
         {
-            return UsagePriceProfile.GetPricePercentage(ComponentType.HardDrive, usage) * highPrice;
+            return UsageProfiles.GetPricePercentage(type, usage) * highPrice;
         }
 
 

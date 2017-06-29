@@ -13,7 +13,7 @@ namespace WeirdBot.Models
 
     public static class ComponentTypeHelpers
     {
-        public static string LookUpCategoryString(ComponentType cat)
+        public static string LookUpComponentTypeString(ComponentType cat)
         {
             switch (cat)
             {
@@ -32,7 +32,7 @@ namespace WeirdBot.Models
             }
         }
 
-        public static ComponentType LookUpCategoryValue(string partitionKey)
+        public static ComponentType LookUpComponentTypeValue(string partitionKey)
         {
             switch (partitionKey)
             {

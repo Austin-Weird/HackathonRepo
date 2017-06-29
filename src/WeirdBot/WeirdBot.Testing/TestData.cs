@@ -84,7 +84,7 @@ namespace WeirdBot.Testing
         public static IEnumerable<ComponentEntity> GetFakeComponentEntities(string partitionKey)
         {
             return GetFakeComponents()
-                .Where(c => c.Category == ComponentTypeHelpers.LookUpCategoryValue(partitionKey))
+                .Where(c => c.Category == ComponentTypeHelpers.LookUpComponentTypeValue(partitionKey))
                 .Select(c => new ComponentEntity(c));
         }
     }

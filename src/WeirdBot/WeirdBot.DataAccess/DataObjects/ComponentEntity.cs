@@ -17,7 +17,7 @@ namespace WeirdBot.DataAccess.DataObjects
 
         public ComponentEntity(int id, ComponentType cat)
         {
-            PartitionKey = ComponentTypeHelpers.LookUpCategoryString(cat);
+            PartitionKey = ComponentTypeHelpers.LookUpComponentTypeString(cat);
             RowKey = id.ToString();
         }
 
@@ -36,7 +36,7 @@ namespace WeirdBot.DataAccess.DataObjects
             return new Component
             {
                 ID = int.Parse(entity.RowKey),
-                Category = ComponentTypeHelpers.LookUpCategoryValue(entity.PartitionKey),
+                Category = ComponentTypeHelpers.LookUpComponentTypeValue(entity.PartitionKey),
                 Name = component.Name,
                 Description = component.Description,
                 Price = component.Price,

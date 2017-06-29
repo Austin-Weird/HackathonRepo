@@ -20,17 +20,37 @@ namespace WeirdBot.DataAccess
             componentTable.CreateIfNotExists();
         }
 
-        public Component GetComponentByPriceAndPowerRank(ComponentType componentType, Quality powerRank, decimal priceTarget)
+        public Component GetComponentByPriceAndQuality(ComponentType componentType, Quality quality, decimal priceTarget)
         {
             var partitionKeyFilter = TableQuery.GenerateFilterCondition("PartitionKey",
                         QueryComparisons.Equal,
-                        ComponentTypeHelpers.LookUpCategoryString(componentType));
+                        ComponentTypeHelpers.LookUpComponentTypeString(componentType));
             var query = new TableQuery<ComponentEntity>().Where(partitionKeyFilter);
-            var components = componentTable.ExecuteQuery(query).Select(x => x.ToComponent());
-            return components.FirstOrDefault(c => c.Price <= priceTarget && c.Quality >= powerRank);
+            var components = componentTable.ExecuteQuery(query)
+                .Select(x => x.ToComponent())
+                .OrderByDescending(c => c.Quality)
+                .ThenByDescending(c => c.Price);
+
+            return SelectFirstMatchingComponent(quality, priceTarget, components);
         }
 
-        public List<Component> GetAllProducts()
+        private static Component SelectFirstMatchingComponent(Quality quality, decimal priceTarget, IEnumerable<Component> components)
+        {
+            Component result;
+            int passes = 0;
+
+            do
+            {
+                result = components
+                    .Where(c => c.Quality <= quality)
+                    .FirstOrDefault(c => c.Price <= priceTarget);
+                passes++;
+            } while (result == null || passes < components.Count());
+
+            return result;
+        }
+
+        public List<Component> GetAllComponents()
         {
             var results = new List<Component>();
             var query = new TableQuery<ComponentEntity>();

@@ -26,7 +26,8 @@ namespace WeirdBot.Utilities
             {
                 var componentRecommender = recommendationEngineSource.GetComponentRecommendationEngine(componentDb, (ComponentType)i);
                 var recommendedItem = componentRecommender.GetRecommendedComponent(usage, highPrice);
-                recommended.SetComponent((ComponentType)i, recommendedItem);
+                if (recommendedItem != null)
+                    recommended.SetComponent((ComponentType)i, recommendedItem);
             }
 
             return recommended;

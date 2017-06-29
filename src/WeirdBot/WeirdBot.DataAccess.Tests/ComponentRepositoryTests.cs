@@ -65,7 +65,7 @@ namespace WeirdBot.DataAccess.Tests
         public void Integration_GetAllProducts_ShouldReturnListOfProductObjects()
         {
             var sut = new ComponentRepository(tableClient);
-            var results = sut.GetAllProducts();
+            var results = sut.GetAllComponents();
 
             Assert.IsNotNull(results);
             Assert.AreEqual(fakeComponents.Count(), results.Count());
@@ -81,10 +81,12 @@ namespace WeirdBot.DataAccess.Tests
             var target = 200.00M;
 
             var sut = new ComponentRepository(tableClient);
-            var result = sut.GetComponentByPriceAndPowerRank(componentType, rank, target);
+            var result = sut.GetComponentByPriceAndQuality(componentType, rank, target);
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOfType(result, typeof(Component));
+            Assert.IsTrue(result.Quality >= rank);
+            Assert.IsTrue(result.Price <= target);
         }
 
     }
