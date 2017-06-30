@@ -49,14 +49,9 @@ namespace WeirdBot.DataService.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/priceLimit/{price}/recommendation")]
         [HttpPost()]
-        public Recommendation GetRecommendation(decimal price, [FromBody]UsageParameter usage)
+        public Recommendation GetRecommendation(decimal price, [FromBody]List<Usage> usages)
         {
-            return recommendationFactory.GetRecommendation(usage.Category.ToArray(), price);
-        }
-
-        public class UsageParameter
-        {
-            public List<Usage> Category { get; set; }
+            return recommendationFactory.GetRecommendation(usages.ToArray(), price);
         }
 
     }

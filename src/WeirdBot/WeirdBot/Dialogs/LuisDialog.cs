@@ -50,7 +50,9 @@ namespace WeirdBot.Dialogs
             if (recommendation.HardDiskDrive != null) builder.Append($"  \r\n  - **Hard Drive** = {recommendation.HardDiskDrive.Name}, {recommendation.HardDiskDrive.Price}, {recommendation.HardDiskDrive.VendorUrl}");
             if (recommendation.SoundCard != null) builder.Append($"  \r\n  - **Sound Card** = {recommendation.SoundCard.Name}, {recommendation.SoundCard.Price}, {recommendation.SoundCard.VendorUrl}");
             if (recommendation.VideoCard != null) builder.Append($"  \r\n  - **Video Card** = {recommendation.VideoCard.Name}, {recommendation.VideoCard.Price}, {recommendation.VideoCard.VendorUrl}");
-            
+            if (recommendation.Processor == null && recommendation.RamKit == null && recommendation.HardDiskDrive == null && recommendation.SoundCard == null && recommendation.VideoCard == null)
+                builder.Append($"  \r\nSorry.  No results found.");
+
             await context.PostAsync(builder.ToString());
             await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
 
