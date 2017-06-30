@@ -28,7 +28,7 @@ namespace WeirdBot.DataAccess.DataObjects
 
     }
 
-    public static class ProductEntityExtensions
+    public static class ComponentEntityExtensions
     {
         public static Component ToComponent(this ComponentEntity entity)
         {
@@ -40,7 +40,7 @@ namespace WeirdBot.DataAccess.DataObjects
                 Name = component.Name,
                 Description = component.Description,
                 Price = component.Price,
-                Quality = component.Quality,
+                Quality = component.Quality, //QualityHelpers.LookUpQualityValues(),
                 VendorUrl = component.VendorUrl
             };
         }

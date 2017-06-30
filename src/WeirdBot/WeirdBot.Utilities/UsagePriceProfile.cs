@@ -26,9 +26,8 @@ namespace WeirdBot.Utilities
                 case Usage.Media:
                     return new MediaPriceProfile();
                 case Usage.Business:
-                    return new BusinessPriceProfile();
                 case Usage.Programming:
-                    return new ProgrammingPriceProfile();
+                    return new BusinessPriceProfile();
                 case Usage.General:
                 default:
                     return new GeneralPriceProfile();
@@ -40,21 +39,10 @@ namespace WeirdBot.Utilities
     {
         public GamingPriceProfile()
         {
-            Add(ComponentType.HardDrive, 0.149M);
-            Add(ComponentType.Processor, 0.164M);
+            Add(ComponentType.HardDrive, 0.186M);
+            Add(ComponentType.Processor, 0.2162M);
             Add(ComponentType.RAM, 0.135M);
             Add(ComponentType.VideoCard, 0.349M);
-        }
-    }
-
-    internal class GamingQualityProfile : Dictionary<ComponentType, Quality>
-    {
-        public GamingQualityProfile()
-        {
-            Add(ComponentType.HardDrive, Quality.Best);
-            Add(ComponentType.Processor, Quality.Best);
-            Add(ComponentType.RAM, Quality.Best);
-            Add(ComponentType.VideoCard, Quality.Best);
         }
     }
 
@@ -62,10 +50,10 @@ namespace WeirdBot.Utilities
     {
         public GeneralPriceProfile()
         {
-            Add(ComponentType.HardDrive, 0.149M);
-            Add(ComponentType.Processor, 0.164M);
+            Add(ComponentType.HardDrive, 0.180M);
+            Add(ComponentType.Processor, 0.174M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.VideoCard, 0.150M);
+            Add(ComponentType.VideoCard, 0.280M);
         }
     }
 
@@ -76,7 +64,7 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.329M);
             Add(ComponentType.Processor, 0.204M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.VideoCard, 0.109M);
+            Add(ComponentType.VideoCard, 0.3537M);
         }
     }
 
@@ -85,20 +73,9 @@ namespace WeirdBot.Utilities
         public MediaPriceProfile()
         {
             Add(ComponentType.HardDrive, 0.359M);
-            Add(ComponentType.Processor, 0.164M);
+            Add(ComponentType.Processor, 0.1980M);
             Add(ComponentType.RAM, 0.135M);
             Add(ComponentType.VideoCard, 0.259M);
-        }
-    }
-
-    internal class ProgrammingPriceProfile : Dictionary<ComponentType, decimal>
-    {
-        public ProgrammingPriceProfile()
-        {
-            Add(ComponentType.HardDrive, 0.149M);
-            Add(ComponentType.Processor, 0.164M);
-            Add(ComponentType.RAM, 0.185M);
-            Add(ComponentType.VideoCard, 0.129M);
         }
     }
 }

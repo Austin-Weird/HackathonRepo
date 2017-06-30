@@ -13,5 +13,4 @@ namespace WeirdBot.Models
         Best
     }
 
-
 }

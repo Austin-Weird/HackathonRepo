@@ -21,28 +21,15 @@ namespace WeirdBot.Utilities
 
         protected Component GetRecommendedComponentOfType(ComponentType type, Usage[] usage, decimal priceCap)
         {
-            if (!IsValid(usage, priceCap))
-                return null;
-
             var priceTarget = GetPriceTarget(type, usage, priceCap);
-            var quality = GetComponentQuality(usage);
+            var quality = GetComponentQuality(type, usage);
 
             return _db.GetComponentByPriceAndQuality(type, quality, priceTarget);
         }
 
-        protected bool IsValid(Usage[] usage, decimal priceCap)
+        private Quality GetComponentQuality(ComponentType type, Usage[] usage)
         {
-            if (usage.Contains(Usage.Gaming))
-                return priceCap > 600M;
-            if (usage.Contains(Usage.Media) || usage.Contains(Usage.Programming))
-                return priceCap > 500M;
-            return priceCap > 200M;
-        }
-
-
-        protected Quality GetComponentQuality(Usage[] usage)
-        {
-            return UsageQualityRank.GetHighetstRankOf(usage);
+            return UsageQualityRank.GetHighetstRankOf(usage, type);
         }
 
         protected decimal GetPriceTarget(ComponentType type, Usage[] usage, decimal highPrice)

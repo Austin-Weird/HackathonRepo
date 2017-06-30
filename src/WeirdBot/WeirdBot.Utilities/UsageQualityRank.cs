@@ -9,31 +9,90 @@ namespace WeirdBot.Utilities
 {
     public class UsageQualityRank
     {
-        public static Quality GetRankOf(Usage item)
+        private static Quality GetRankOf(Usage item, ComponentType type)
         {
             switch (item)
             {
                 case Usage.Gaming:
+                    return new GamingQualityProfile()[type];
                 case Usage.Media:
-                    return Quality.Best;
+                    return new MediaQualityProfile()[type];
                 case Usage.Programming:
+                    return new ProgrammingQualityProfile()[type];
                 case Usage.Business:
-                    return Quality.Better;
+                    return new BusinessQualityProfile()[type];
                 case Usage.General:
                 default:
-                    return Quality.Good;
+                    return new GeneralQualityProfile()[type];
             }
         }
 
-        public static Quality GetHighetstRankOf(Usage[] usage)
+        public static Quality GetHighetstRankOf(Usage[] usage, ComponentType type)
         {
             Quality highestRank = Quality.Good;
             foreach (var item in usage)
             {
-                var thisItemRank = GetRankOf(item);
+                var thisItemRank = GetRankOf(item, type);
                 highestRank = (int)thisItemRank > (int)highestRank ? thisItemRank : highestRank;
             }
             return highestRank;
         }
     }
+
+    internal class GeneralQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public GeneralQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Good);
+            Add(ComponentType.Processor, Quality.Good);
+            Add(ComponentType.RAM, Quality.Good);
+            Add(ComponentType.VideoCard, Quality.Good);
+        }
+    }
+
+    internal class BusinessQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public BusinessQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Better);
+            Add(ComponentType.Processor, Quality.Good);
+            Add(ComponentType.RAM, Quality.Good);
+            Add(ComponentType.VideoCard, Quality.Good);
+        }
+    }
+
+    internal class ProgrammingQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public ProgrammingQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Better);
+            Add(ComponentType.Processor, Quality.Best);
+            Add(ComponentType.RAM, Quality.Best);
+            Add(ComponentType.VideoCard, Quality.Good);
+        }
+    }
+
+    internal class MediaQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public MediaQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Better);
+            Add(ComponentType.Processor, Quality.Best);
+            Add(ComponentType.RAM, Quality.Better);
+            Add(ComponentType.VideoCard, Quality.Best);
+        }
+    }
+
+    internal class GamingQualityProfile : Dictionary<ComponentType, Quality>
+    {
+        public GamingQualityProfile()
+        {
+            Add(ComponentType.HardDrive, Quality.Best);
+            Add(ComponentType.Processor, Quality.Best);
+            Add(ComponentType.RAM, Quality.Best);
+            Add(ComponentType.VideoCard, Quality.Best);
+        }
+    }
+
+
 }

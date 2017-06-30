@@ -47,7 +47,7 @@ namespace WeirdBot.Utilities.Tests
 
         private IComponentRecommendationEngine GetFakeEngineFor(ComponentType type, Usage[] usage, decimal highPrice)
         {
-            var quality = UsageQualityRank.GetHighetstRankOf(usage);
+            var quality = UsageQualityRank.GetHighetstRankOf(usage, type);
             var componentHighPrice = UsageProfiles.GetPricePercentage(type, usage) * highPrice;
             var fakeEngine = new Mock<IComponentRecommendationEngine>();
             fakeEngine

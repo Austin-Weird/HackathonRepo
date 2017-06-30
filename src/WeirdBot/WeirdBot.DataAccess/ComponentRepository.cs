@@ -36,18 +36,9 @@ namespace WeirdBot.DataAccess
 
         private static Component SelectFirstMatchingComponent(Quality quality, decimal priceTarget, IEnumerable<Component> components)
         {
-            Component result;
-            int passes = 0;
-
-            do
-            {
-                result = components
-                    .Where(c => c.Quality <= quality)
-                    .FirstOrDefault(c => c.Price <= priceTarget);
-                passes++;
-            } while (result == null || passes < components.Count());
-
-            return result;
+            return components
+                .Where(c => c.Quality <= quality)
+                .FirstOrDefault(c => c.Price <= priceTarget);
         }
 
         public List<Component> GetAllComponents()

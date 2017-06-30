@@ -19,20 +19,32 @@ namespace WeirdBot.Utilities
             recommendationEngineSource = engineSource;
         }
 
-        public Recommendation GetRecommendation(Usage[] usage, decimal highPrice)
+        public Recommendation GetRecommendation(Usage[] usage, decimal priceCap)
         {
             var recommended = new Recommendation();
+
+            //if (!IsValid(usage, priceCap))
+            //    return recommended;
 
             for (int i = 0; i < Enum.GetValues(typeof(ComponentType)).Length; i++)
             {
                 var componentRecommender = recommendationEngineSource.GetComponentRecommendationEngine(componentDb, (ComponentType)i);
-                var recommendedItem = componentRecommender.GetRecommendedComponent(usage, highPrice);
+                var recommendedItem = componentRecommender.GetRecommendedComponent(usage, priceCap);
                 if (recommendedItem != null)
                     recommended.SetComponent((ComponentType)i, recommendedItem);
             }
 
             return recommended;
         }
+
+        //protected bool IsValid(Usage[] usage, decimal priceCap)
+        //{
+        //    if (usage.Contains(Usage.Gaming))
+        //        return priceCap > 500M;
+        //    if (usage.Contains(Usage.Media) || usage.Contains(Usage.Programming))
+        //        return priceCap > 500M;
+        //    return priceCap > 200M;
+        //}
 
 
     }
