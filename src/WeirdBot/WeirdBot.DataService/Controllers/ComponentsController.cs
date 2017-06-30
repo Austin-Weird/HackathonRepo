@@ -24,65 +24,7 @@ namespace WeirdBot.DataService.Controllers
             recommendationFactory = factory;
         }
 
-        //IEnumerable<Component> fakeComponents = new Component[] {
-        //        new Component {
-        //            ID = 1,
-        //            Category = ComponentType.HardDrive,
-        //            Name = "Decent 1TB Hard Drive",
-        //            Description ="1TB worth of storage with decent performance",
-        //            Price = 40.00M,
-        //            VendorUrl= "myvendor.com/products/X123-33.html"
-        //        },
-        //        new Component {
-        //            ID = 2,
-        //            Category = ComponentType.HardDrive,
-        //            Name = "4TB Hard Drive",
-        //            Description = "4TB storage",
-        //            Price = 75.00M,
-        //            VendorUrl = "myvendor.com/products/X123-133X.html"
-        //        },
-        //        new Component {
-        //            ID = 3,
-        //            Category = ComponentType.HardDrive,
-        //            Name = "250GB SSD Drive",
-        //            Description = "Faster tech, smaller drive",
-        //            Price = 100.00M,
-        //            VendorUrl = "myvendor.com/products/X223-S134X.html"
-        //        },
-        //        new Component {
-        //            ID = 1,
-        //            Category = ComponentType.Processor,
-        //            Name = "AMD Decent Processor",
-        //            Description = "Not bad for the buck, but not going to run your heavy processing",
-        //            Price = 211.00M,
-        //            VendorUrl = "myvendor.com/products/P1393-CCX.html"
-        //        },
-        //        new Component {
-        //            ID = 2,
-        //            Category = ComponentType.Processor,
-        //            Name = "Intel Hot Processor",
-        //            Description = "Drooool...",
-        //            Price = 309.00M,
-        //            VendorUrl = "myvendor.com/products/P8873-JSH.html"
-        //        },
-        //        new Component {
-        //            ID = 1,
-        //            Category = ComponentType.VideoCard,
-        //            Name = "AMD Good Enough Card",
-        //            Description = "Meh",
-        //            Price = 100.00M,
-        //            VendorUrl = "myvendor.com/products/GP99923-FF-234"
-        //        },
-        //        new Component {
-        //            ID = 2,
-        //            Category = ComponentType.VideoCard,
-        //            Name = "NVidia Powerhouse",
-        //            Description = "Yeah, baby",
-        //            Price = 338.00M,
-        //            VendorUrl = "myvendor.com/products/GP99923-FF-234"
-        //        }
-        //    };
-
+ 
         // GET api/components
         [SwaggerOperation("GetAll")]
         public IEnumerable<Component> Get()
@@ -107,37 +49,15 @@ namespace WeirdBot.DataService.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/priceLimit/{price}/recommendation")]
         [HttpPost()]
-        public Recommendation GetRecommendation(decimal price, [FromBody]CategoryParameter categories)
+        public Recommendation GetRecommendation(decimal price, [FromBody]UsageParameter usage)
         {
-            //Stream req = Request.Content.ReadAsStreamAsync().Result;
-            //req.Seek(0, System.IO.SeekOrigin.Begin);
-            //string json = new StreamReader(req).ReadToEnd();
-            //var o = JsonConvert.DeserializeObject<categoryParameter>(json);
-
-            return recommendationFactory.GetRecommendation(categories.Usage.ToArray(), price);
+            return recommendationFactory.GetRecommendation(usage.Category.ToArray(), price);
         }
 
-        public class CategoryParameter
+        public class UsageParameter
         {
-            public List<Usage> Usage { get; set; }
+            public List<Usage> Category { get; set; }
         }
-
-        //// POST api/category/{usage}/lowPrice/{low}/highPrice/{high}/recommendation
-        //[SwaggerOperation("GetRecommendation")]
-        //[SwaggerResponse(HttpStatusCode.OK)]
-        //[SwaggerResponse(HttpStatusCode.NotFound)]
-        //[Route("api/category/{usage}/lowPrice/{low}/highPrice/{high}/recommendation")]
-        //[HttpPost()]
-        //public Recommendation GetRecommendation(Usage usage, decimal low, decimal high)
-        //{
-        //    ComponentRepository repo = new ComponentRepository();
-
-        //    var sut = new RecommendationFactory(repo, new RecommendationEngineSupplier());
-
-        //    Usage[] usageArray = new Usage[] { usage };
-
-        //    return sut.GetRecommendation(usageArray, high);
-        //}
 
     }
 }
