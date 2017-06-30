@@ -22,8 +22,6 @@ namespace WeirdBot.Utilities
                     return new RamRecommendationEngine(componentDb);
                 case ComponentType.VideoCard:
                     return new VideoCardRecommendationEngine(componentDb);
-                case ComponentType.SoundCard:
-                    return new SoundCardRecommendationEngine(componentDb);
                 default:
                     return new NullRecommendationEngine(componentDb);
             }

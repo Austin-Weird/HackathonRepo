@@ -42,7 +42,6 @@ namespace WeirdBot.Utilities.Tests
             Assert.IsTrue(result.HardDiskDrive.Category == ComponentType.HardDrive);
             Assert.IsTrue(result.RamKit.Category == ComponentType.RAM);
             Assert.IsTrue(result.VideoCard.Category == ComponentType.VideoCard);
-            Assert.IsTrue(result.SoundCard.Category == ComponentType.SoundCard);
             Assert.IsTrue(result.TotalPrice <= priceCap);
         }
 
@@ -94,7 +93,6 @@ namespace WeirdBot.Utilities.Tests
             Assert.IsNull(result.HardDiskDrive);
             Assert.IsNull(result.Processor);
             Assert.IsNull(result.RamKit);
-            Assert.IsNull(result.SoundCard);
             Assert.IsNull(result.VideoCard);
         }
 

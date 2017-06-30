@@ -7,8 +7,7 @@ namespace WeirdBot.Models
         HardDrive,
         Processor,
         RAM,
-        VideoCard,
-        SoundCard
+        VideoCard
     }
 
     public static class ComponentTypeHelpers
@@ -23,8 +22,6 @@ namespace WeirdBot.Models
                     return "processor";
                 case ComponentType.RAM:
                     return "ram";
-                case ComponentType.SoundCard:
-                    return "soundcard";
                 case ComponentType.VideoCard:
                     return "videocard";
                 default:
@@ -42,8 +39,6 @@ namespace WeirdBot.Models
                     return ComponentType.Processor;
                 case "ram":
                     return ComponentType.RAM;
-                case "soundcard":
-                    return ComponentType.SoundCard;
                 case "videocard":
                     return ComponentType.VideoCard;
                 default:

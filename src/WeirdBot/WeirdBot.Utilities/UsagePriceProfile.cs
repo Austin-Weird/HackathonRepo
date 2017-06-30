@@ -43,7 +43,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.149M);
             Add(ComponentType.Processor, 0.164M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.SoundCard, 0.060M);
             Add(ComponentType.VideoCard, 0.349M);
         }
     }
@@ -55,7 +54,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, Quality.Best);
             Add(ComponentType.Processor, Quality.Best);
             Add(ComponentType.RAM, Quality.Best);
-            Add(ComponentType.SoundCard, Quality.Best);
             Add(ComponentType.VideoCard, Quality.Best);
         }
     }
@@ -67,7 +65,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.149M);
             Add(ComponentType.Processor, 0.164M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.SoundCard, 0.060M);
             Add(ComponentType.VideoCard, 0.150M);
         }
     }
@@ -79,7 +76,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.329M);
             Add(ComponentType.Processor, 0.204M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.SoundCard, 0.060M);
             Add(ComponentType.VideoCard, 0.109M);
         }
     }
@@ -91,7 +87,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.359M);
             Add(ComponentType.Processor, 0.164M);
             Add(ComponentType.RAM, 0.135M);
-            Add(ComponentType.SoundCard, 0.080M);
             Add(ComponentType.VideoCard, 0.259M);
         }
     }
@@ -103,7 +98,6 @@ namespace WeirdBot.Utilities
             Add(ComponentType.HardDrive, 0.149M);
             Add(ComponentType.Processor, 0.164M);
             Add(ComponentType.RAM, 0.185M);
-            Add(ComponentType.SoundCard, 0.060M);
             Add(ComponentType.VideoCard, 0.129M);
         }
     }

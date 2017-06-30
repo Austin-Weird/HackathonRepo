@@ -49,7 +49,6 @@
     <Compile Include="RecommendationEngines\RecommendationEngineBase.cs" />
     <Compile Include="RecommendationEngineSupplier.cs" />
     <Compile Include="RecommendationFactory.cs" />
-    <Compile Include="RecommendationEngines\SoundCardRecommendationEngine.cs" />
     <Compile Include="UsageQualityRank.cs" />
     <Compile Include="UsagePriceProfile.cs" />
     <Compile Include="RecommendationEngines\VideoCardRecommendationEngine.cs" />

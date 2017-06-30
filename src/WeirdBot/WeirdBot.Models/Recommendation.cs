@@ -17,12 +17,6 @@ namespace WeirdBot.Models
             set
             {
                 SetComponentProperty(value, ComponentType.HardDrive, ref _hdd);
-                //if (value.Category != ComponentType.HardDrive)
-                //    throw new ArgumentException("Component is not of correct type.");
-                //_total += value.Price;
-                //_hdd = value;
-                //if (value == null)
-                //    ResetTotal();
             }
         }
         private Component _cpu;
@@ -32,12 +26,6 @@ namespace WeirdBot.Models
             set
             {
                 SetComponentProperty(value, ComponentType.Processor, ref _cpu);
-                //if (value.Category != ComponentType.Processor)
-                //    throw new ArgumentException("Component is not of correct type.");
-                //_total += value.Price;
-                //_cpu = value;
-                //if (value == null)
-                //    ResetTotal();
             }
         }
         private Component _ram;
@@ -47,27 +35,6 @@ namespace WeirdBot.Models
             set
             {
                 SetComponentProperty(value, ComponentType.RAM, ref _ram);
-                //if (value.Category != ComponentType.RAM)
-                //    throw new ArgumentException("Component is not of correct type.");
-                //_total += value.Price;
-                //_ram = value;
-                //if (value == null)
-                //    ResetTotal();
-            }
-        }
-        private Component _sc;
-        public Component SoundCard
-        {
-            get { return _sc; }
-            set
-            {
-                SetComponentProperty(value, ComponentType.SoundCard, ref _sc);
-                //if (value.Category != ComponentType.SoundCard)
-                //    throw new ArgumentException("Component is not of correct type.");
-                //_total += value.Price;
-                //_sc = value;
-                //if (value == null)
-                //    ResetTotal();
             }
         }
         private Component _vc;
@@ -104,10 +71,8 @@ namespace WeirdBot.Models
             _total += HardDiskDrive != null ? HardDiskDrive.Price : 0;
             _total += RamKit != null ? RamKit.Price : 0;
             _total += Processor != null ? Processor.Price : 0;
-            _total += SoundCard != null ? SoundCard.Price : 0;
             _total += VideoCard != null ? VideoCard.Price : 0;
         }
-
 
         public void SetComponent(ComponentType type, Component item)
         {
@@ -122,10 +87,7 @@ namespace WeirdBot.Models
                 case ComponentType.RAM:
                     RamKit = item;
                     break;
-                case ComponentType.SoundCard:
-                    SoundCard = item;
-                    break;
-                case ComponentType.VideoCard:
+                 case ComponentType.VideoCard:
                     VideoCard = item;
                     break;
                 default:
