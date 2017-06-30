@@ -8,6 +8,8 @@ using Swashbuckle.Swagger.Annotations;
 using WeirdBot.Models;
 using WeirdBot.Utilities;
 using WeirdBot.DataAccess;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace WeirdBot.DataService.Controllers
 {
@@ -105,9 +107,19 @@ namespace WeirdBot.DataService.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [Route("api/priceLimit/{price}/recommendation")]
         [HttpPost()]
-        public Recommendation GetRecommendation(decimal price, [FromBody]List<Usage> categories)
+        public Recommendation GetRecommendation(decimal price, [FromBody]CategoryParameter categories)
         {
-            return recommendationFactory.GetRecommendation(categories.ToArray(), price);
+            //Stream req = Request.Content.ReadAsStreamAsync().Result;
+            //req.Seek(0, System.IO.SeekOrigin.Begin);
+            //string json = new StreamReader(req).ReadToEnd();
+            //var o = JsonConvert.DeserializeObject<categoryParameter>(json);
+
+            return recommendationFactory.GetRecommendation(categories.Usage.ToArray(), price);
+        }
+
+        public class CategoryParameter
+        {
+            public List<Usage> Usage { get; set; }
         }
 
         //// POST api/category/{usage}/lowPrice/{low}/highPrice/{high}/recommendation
@@ -119,7 +131,7 @@ namespace WeirdBot.DataService.Controllers
         //public Recommendation GetRecommendation(Usage usage, decimal low, decimal high)
         //{
         //    ComponentRepository repo = new ComponentRepository();
-            
+
         //    var sut = new RecommendationFactory(repo, new RecommendationEngineSupplier());
 
         //    Usage[] usageArray = new Usage[] { usage };
