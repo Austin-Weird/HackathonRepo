@@ -45,12 +45,19 @@ namespace WeirdBot.Dialogs
 
             var builder = new StringBuilder();
             builder.Append($"Great we got that all set up for you!  \r\nHere is your recommended computer build: ");
-            if (recommendation.Processor != null) builder.Append($"  \r\n  - **CPU** = {recommendation.Processor.Name}, {recommendation.Processor.Price}, {recommendation.Processor.VendorUrl}");
-            if (recommendation.RamKit != null) builder.Append($"  \r\n  - **Memory** = {recommendation.RamKit.Name}, {recommendation.RamKit.Price}, {recommendation.RamKit.VendorUrl}");
-            if (recommendation.HardDiskDrive != null) builder.Append($"  \r\n  - **Hard Drive** = {recommendation.HardDiskDrive.Name}, {recommendation.HardDiskDrive.Price}, {recommendation.HardDiskDrive.VendorUrl}");
-            if (recommendation.VideoCard != null) builder.Append($"  \r\n  - **Video Card** = {recommendation.VideoCard.Name}, {recommendation.VideoCard.Price}, {recommendation.VideoCard.VendorUrl}");
-            if (recommendation.Processor == null && recommendation.RamKit == null && recommendation.HardDiskDrive == null  && recommendation.VideoCard == null)
+            if (recommendation.Processor != null)
+                builder.Append($"  \r\n  - **CPU** = {recommendation.Processor.Name} for {recommendation.Processor.Price:C} at {recommendation.Processor.VendorUrl}");
+            if (recommendation.RamKit != null)
+                builder.Append($"  \r\n  - **Memory** = {recommendation.RamKit.Name} for {recommendation.RamKit.Price:C} at {recommendation.RamKit.VendorUrl}");
+            if (recommendation.HardDiskDrive != null)
+                builder.Append($"  \r\n  - **Hard Drive** = {recommendation.HardDiskDrive.Name} for {recommendation.HardDiskDrive.Price:C} at {recommendation.HardDiskDrive.VendorUrl}");
+            if (recommendation.VideoCard != null)
+                builder.Append($"  \r\n  - **Video Card** = {recommendation.VideoCard.Name} for {recommendation.VideoCard.Price:C} at {recommendation.VideoCard.VendorUrl}");
+
+            if (recommendation.Processor == null && recommendation.RamKit == null && recommendation.HardDiskDrive == null && recommendation.VideoCard == null)
                 builder.Append($"  \r\nSorry.  No results found.");
+            else
+                builder.Append($"  \r\n  -  **Total Price** = {recommendation.TotalPrice:C}");
 
             await context.PostAsync(builder.ToString());
             await context.PostAsync($"Thank you for using the Austin Weird Bot, {name}!");
