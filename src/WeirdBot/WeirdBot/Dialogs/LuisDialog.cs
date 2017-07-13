@@ -40,6 +40,9 @@ namespace WeirdBot.Dialogs
             var token = await result;
             var name = "User";
             context.UserData.TryGetValue<string>("Name", out name);
+
+            //TODO: John - await context.PostAsync($"Ok, thanks!  I am looking up that information for you now.  Please wait...");
+
             var api = new ApiDataService();
             var recommendation = await api.GetComputerPartsRecommendation(token);
 
