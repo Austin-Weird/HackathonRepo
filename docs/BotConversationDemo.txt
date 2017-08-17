@@ -1,0 +1,172 @@
+hi
+User
+Hi! Welcome to the Austin Weird Bot!
+Bot
+I am a professional consultant available to answer your questions on ‘what do I need to build a Do It Yourself(DIY) project’.
+Bot
+First, what is your name?
+Bot
+John
+User
+Hi John. How can I help you today?
+Bot
+You can ask about the following build options:
+Bot
+I would like to build a computer
+Bot
+I would like to build a computer
+User
+Welcome to the Computer Builder! Type Help at any time to see your options.
+Bot
+Please enter price range
+Bot
+quit
+couldn't send retry
+Exception: Form quit.
+[File of type 'text/plain']
+Bot
+help
+User
+I’m sorry. I don’t know what you mean.
+Bot
+build computer
+User
+Welcome to the Computer Builder! Type Help at any time to see your options.
+Bot
+Please enter price range
+Bot
+help
+User
+You are filling in the price range field. Possible responses:
+You can enter anything (use "'s to force string).
+Back: Go back to the previous question.
+Help: Show the kinds of responses you can enter.
+Quit: Quit the form without completing it.
+Reset: Start over filling in the form. (With defaults from your previous entries.)
+Status: Show your progress in filling in the form so far.
+You can switch to another field by entering its name. (Price Range, or Category).
+Bot
+Please enter price range
+Bot
+500-1000
+User
+Please select one or more category
+General
+Media
+Business
+Developer
+Gaming
+Bot
+1,5
+User
+Is this your selection?
+Price Range: 500-1000
+Category: General, and Gaming
+Bot
+no
+User
+What do you want to change?
+Price Range(500-1000)Category(General, and Gaming)No Preference
+Bot
+Category
+User
+Please select one or more category (current choice: General, and Gaming)
+General
+Media
+Business
+Developer
+Gaming
+Bot
+2,5
+User
+Is this your selection?
+Price Range: 500-1000
+Category: Media, and Gaming
+Bot
+yes
+User
+Great we got that all set up for you!
+Bot
+Thank you for using the Austin Weird Bot, John!
+Bot
+build computer
+User
+Welcome to the Computer Builder! Type Help at any time to see your options.
+Bot
+Please enter price range
+Bot
+500-1000
+User
+Please select one or more category
+General
+Media
+Business
+Developer
+Gaming
+Bot
+2.5
+User
+Is this your selection?
+Price Range: 500-1000
+Category: Media, and Gaming
+Bot
+25
+User
+“25” is not a confirmation option.
+Bot
+no
+User
+What do you want to change?
+Price Range(500-1000)Category(Media, and Gaming)No Preference
+Bot
+Category
+User
+Please select one or more category (current choice: Media, and Gaming)
+General
+Media
+Business
+Developer
+Gaming
+Bot
+25
+User
+“25” is not a category option.
+Bot
+2 5
+User
+Is this your selection?
+Price Range: 500-1000
+Category: Media, and Gaming
+Bot
+y
+User
+Great we got that all set up for you!
+Bot
+Thank you for using the Austin Weird Bot, John!
+Bot
+buy a washer
+User
+Welcome to the Computer Builder! Type Help at any time to see your options.
+Bot
+Please enter price range
+Bot
+lkasjfla;sjkf
+User
+Please select one or more category
+General
+Media
+Business
+Developer
+Gaming
+Bot
+1
+User
+Is this your selection?
+Price Range: lkasjfla;sjkf
+Category: General
+Bot
+yes
+User
+Great we got that all set up for you!
+Bot
+Thank you for using the Austin Weird Bot, John!
